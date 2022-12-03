@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
+import contaCartelle.Conta;
+
 public class Home  extends Finestra{
 	private final String deff="--------";
 	private Double bat=0.0;
@@ -29,9 +31,9 @@ public class Home  extends Finestra{
 		centro.setOpaque(false);
 		c.add("Center",centro);
 		
-/*1*/	Etichetta non=new Etichetta("Inserire numero battute: (spazi incl)");
+/*1*/	Etichetta non=new Etichetta("<html>Inserire numero battute: (spazi incl)<br>O droppa qui il file     ------------></html>");
 		centro.add(non);
-		FormVuoto form =new FormVuoto("battute");
+		FormVuoto form =new FormVuoto("battute o file");
 		centro.add(form);
 	
 /*2*/		Etichetta car=new Etichetta("Numero cartelle totali:");
@@ -53,6 +55,8 @@ public class Home  extends Finestra{
 		centro.add(com);
 		Etichetta com1=new Etichetta(deff);
 		centro.add(com1);
+		
+		
 		
 /*6*/	Bottone bex=new Bottone("Chiudi");
 		bex.but.addActionListener(new ActionListener() {
@@ -88,6 +92,30 @@ public class Home  extends Finestra{
 					mac1.setText(deff);
 					com1.setText(deff);
 		    	}
+		    	try {
+		    		Conta pro=new Conta(form.ciao);
+					bat=pro.con();
+					cart=bat/1800;
+					micr=cart*pre1;
+					macr=cart*pre2;
+					comp=cart*pre3;
+					car1.setText(Est.de.format(cart));
+					mic1.setText(Est.deci.format(micr)+"0 Euro");
+					mac1.setText(Est.deci.format(macr)+"0 Euro");
+					com1.setText(Est.deci.format(comp)+"0 Euro");
+		    	}
+		    	catch (Exception ex) {
+		    		form.clear();
+		    		bat=0.0;
+		    		cart=0.0;
+		    		micr=0.0;
+		    		macr=0.0;
+		    		comp=0.0;
+		    		car1.setText(deff);
+					mic1.setText(deff);
+					mac1.setText(deff);
+					com1.setText(deff);
+		    	}
 			}
 		});
 		centro.add(cal);
@@ -95,5 +123,4 @@ public class Home  extends Finestra{
 		
 		pack();
 	}
-
 }
