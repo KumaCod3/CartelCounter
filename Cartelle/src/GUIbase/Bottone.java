@@ -1,5 +1,4 @@
 package GUIbase;
-
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
 

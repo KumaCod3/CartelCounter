@@ -5,15 +5,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 public class Home  extends Finestra{
-	String deff="--------";
-	Double bat=0.0;
-	Double cart;
-	Double micr;
-	Double macr;
-	Double comp;
-	Double pre1=2.0;
-	Double pre2=3.0;
-	Double pre3=4.0;
+	private final String deff="--------";
+	private Double bat=0.0;
+	private Double cart;
+	private Double micr;
+	private Double macr;
+	private Double comp;
+	static Double pre1=2.0;
+	static Double pre2=3.0;
+	static Double pre3=4.0;
 	
 	public Home(){
 		super("Home: ");
