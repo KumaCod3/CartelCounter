@@ -2,7 +2,6 @@ package GUIbase;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JPanel;
 
 public class Home  extends Finestra{
@@ -24,13 +23,11 @@ public class Home  extends Finestra{
 		Etichetta tit=new Etichetta("IL CALCOLATORE DELLO SCRITTOMANTE");
 		titolo.add(tit);
 		c.add("North", titolo);
-
 		
 		JPanel centro=new JPanel();
 		centro.setLayout(new GridLayout(6,2));
 		centro.setOpaque(false);
 		c.add("Center",centro);
-		
 		
 /*1*/	Etichetta non=new Etichetta("Inserire numero battute: (spazi incl)");
 		centro.add(non);
@@ -68,15 +65,29 @@ public class Home  extends Finestra{
 		Bottone cal=new Bottone("Calcola");
 		cal.but.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-				bat=Double.parseDouble(form.ret);
-				cart=bat/1800;
-				micr=cart*pre1;
-				macr=cart*pre2;
-				comp=cart*pre3;
-				car1.setText(Est.de.format(cart));
-				mic1.setText(Est.deci.format(micr)+"0 Euro");
-				mac1.setText(Est.deci.format(macr)+"0 Euro");
-				com1.setText(Est.deci.format(comp)+"0 Euro");
+		    	try {
+					bat=Double.parseDouble(form.ret);
+					cart=bat/1800;
+					micr=cart*pre1;
+					macr=cart*pre2;
+					comp=cart*pre3;
+					car1.setText(Est.de.format(cart));
+					mic1.setText(Est.deci.format(micr)+"0 Euro");
+					mac1.setText(Est.deci.format(macr)+"0 Euro");
+					com1.setText(Est.deci.format(comp)+"0 Euro");
+		    	}
+		    	catch (NumberFormatException ex) {
+		    		form.clear();
+		    		bat=0.0;
+		    		cart=0.0;
+		    		micr=0.0;
+		    		macr=0.0;
+		    		comp=0.0;
+		    		car1.setText(deff);
+					mic1.setText(deff);
+					mac1.setText(deff);
+					com1.setText(deff);
+		    	}
 			}
 		});
 		centro.add(cal);
@@ -84,4 +95,5 @@ public class Home  extends Finestra{
 		
 		pack();
 	}
+
 }

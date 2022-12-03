@@ -15,10 +15,8 @@ public class FormVuoto extends JTextField{
 		setForeground(Est.chiarissimo);
 		addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
-				if (getText().equals(tit)){
-					setText("");
-					setForeground(Color.BLACK);
-				}
+				setText("");
+				setForeground(Color.BLACK);
 			}
 			public void focusLost(FocusEvent e){
 				if (getText().isEmpty()){
