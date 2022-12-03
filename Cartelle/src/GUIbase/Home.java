@@ -32,32 +32,32 @@ public class Home  extends Finestra{
 		c.add("Center",centro);
 		
 		
-		Etichetta non=new Etichetta("Inserire numero battute: (spazi incl)");
+/*1*/	Etichetta non=new Etichetta("Inserire numero battute: (spazi incl)");
 		centro.add(non);
 		FormVuoto form =new FormVuoto("battute");
 		centro.add(form);
 	
-		Etichetta car=new Etichetta("Numero cartelle totali:");
+/*2*/		Etichetta car=new Etichetta("Numero cartelle totali:");
 		centro.add(car);
 		Etichetta car1=new Etichetta(deff);
 		centro.add(car1);
 		
-		Etichetta mic=new Etichetta("Costo MicroEditing:");
+/*3*/	Etichetta mic=new Etichetta("Costo MicroEditing:");
 		centro.add(mic);
 		Etichetta mic1=new Etichetta(deff);
 		centro.add(mic1);
 		
-		Etichetta mac=new Etichetta("Costo MacroEditing:");
+/*4*/	Etichetta mac=new Etichetta("Costo MacroEditing:");
 		centro.add(mac);
 		Etichetta mac1=new Etichetta(deff);
 		centro.add(mac1);
 		
-		Etichetta com=new Etichetta("Costo Completo:");
+/*5*/	Etichetta com=new Etichetta("Costo Completo:");
 		centro.add(com);
 		Etichetta com1=new Etichetta(deff);
 		centro.add(com1);
 		
-		Bottone bex=new Bottone("Chiudi");
+/*6*/	Bottone bex=new Bottone("Chiudi");
 		bex.but.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 				setVisible(false);
