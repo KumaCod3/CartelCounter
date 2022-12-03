@@ -31,7 +31,7 @@ public class Header extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         int wi = getWidth(), he = getHeight();
-        GradientPaint gp = new GradientPaint(0,0,Est.scuro,0,he,Est.sfondo);
+        GradientPaint gp = new GradientPaint(0,0,Est.sfondo,0,he,Est.scuro);
         g2d.setPaint(gp);
         g2d.fillRect(0, 0, wi, he);
 		

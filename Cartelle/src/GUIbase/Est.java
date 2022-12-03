@@ -38,8 +38,8 @@ public class Est {
 	public static DateTimeFormatter dateForm= DateTimeFormatter.ofPattern("yyyy-MM-dd H:mm.ss");
 	
 	public static Border bordo= BorderFactory.createEmptyBorder(10,10,10,10);
-	public static Border borCol= BorderFactory.createMatteBorder(0, 4, 4, 4, scuro);
-	public static Border borColHe= BorderFactory.createMatteBorder(4, 4, 0, 4, scuro);
+	public static Border borColHe= BorderFactory.createMatteBorder(0, 4, 4, 4, scuro);
+	public static Border borCol= BorderFactory.createMatteBorder(4, 4, 0, 4, scuro);
 	public static Border borColTut= BorderFactory.createMatteBorder(4, 4, 4, 4, scuro);
 	
 }

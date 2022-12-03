@@ -19,17 +19,17 @@ public class Finestra extends Frame {
             }    
         });
 		
-		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		setLayout(new BorderLayout());
 		setLocation(Est.marginX, Est.marginY);
 		setPreferredSize(Est.standard);
 		setBackground(Est.sfondo);
 		Header testa = new Header();
-		add(testa);
+		add("South",testa);
 		c = new JPanel();
 		c.setLayout(new BorderLayout(100, 10));
 		c.setBorder(Est.borCol);
 		c.setOpaque(false);
-		add(c);
+		add("Center",c);
 
 	}
 }
