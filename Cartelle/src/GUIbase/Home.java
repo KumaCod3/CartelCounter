@@ -1,81 +1,87 @@
 package GUIbase;
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 
 import javax.swing.JPanel;
 
 public class Home  extends Finestra{
-	boolean tipp=true;
-	int index=-1;
-	int indice=-1;
+	String deff="--------";
+	Double bat=0.0;
+	Double cart;
+	Double micr;
+	Double macr;
+	Double comp;
+	Double pre1=2.0;
+	Double pre2=3.0;
+	Double pre3=4.0;
 	
 	public Home(){
 		super("Home: ");
+		
+		JPanel titolo=new JPanel();
+		titolo.setOpaque(false);
+		Etichetta tit=new Etichetta("IL CALCOLATORE DELLO SCRITTOMANTE");
+		titolo.add(tit);
+		c.add("North", titolo);
 
+		
 		JPanel centro=new JPanel();
-		centro.setLayout(new GridLayout(1,1));
+		centro.setLayout(new GridLayout(6,2));
 		centro.setOpaque(false);
 		c.add("Center",centro);
-		JPanel sinistro=new JPanel();
-		sinistro.setOpaque(false);
-		sinistro.setLayout(new BorderLayout());
-		Etichetta non=new Etichetta("Products in storage: ");
-		sinistro.add("North",non);
 		
-//		TabMerc tab=new TabMerc();
-//		sinistro.add("Center",tab.ta());
-//		tab.tavola.addFocusListener(new FocusListener() {
-//			public void focusGained(FocusEvent e){
-//				indice=tab.tavola.getSelectedRow();
-//				index=DataM.trovaNome(tab.getNome(indice));
-//			}
-//			public void focusLost(FocusEvent e){
-//
-//			}
-//		});
 		
-		JPanel sud=new JPanel();
-		sud.setOpaque(false);
-		sud.setLayout(new GridLayout(1,3));
-		Bottone bex=new Bottone("Back");
+		Etichetta non=new Etichetta("Inserire numero battute: (spazi incl)");
+		centro.add(non);
+		FormVuoto form =new FormVuoto("battute");
+		centro.add(form);
+	
+		Etichetta car=new Etichetta("Numero cartelle totali:");
+		centro.add(car);
+		Etichetta car1=new Etichetta(deff);
+		centro.add(car1);
+		
+		Etichetta mic=new Etichetta("Costo MicroEditing:");
+		centro.add(mic);
+		Etichetta mic1=new Etichetta(deff);
+		centro.add(mic1);
+		
+		Etichetta mac=new Etichetta("Costo MacroEditing:");
+		centro.add(mac);
+		Etichetta mac1=new Etichetta(deff);
+		centro.add(mac1);
+		
+		Etichetta com=new Etichetta("Costo Completo:");
+		centro.add(com);
+		Etichetta com1=new Etichetta(deff);
+		centro.add(com1);
+		
+		Bottone bex=new Bottone("Chiudi");
 		bex.but.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		    	Home home=new Home();
-				home.setVisible(true);
 				setVisible(false);
 		    	dispose();
+		    	System.exit(0);
 			}
 		});
-		sud.add(bex);
+		Bottone cal=new Bottone("Calcola");
+		cal.but.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+				bat=Double.parseDouble(form.ret);
+				cart=bat/1800;
+				micr=cart*pre1;
+				macr=cart*pre2;
+				comp=cart*pre3;
+				car1.setText(Est.de.format(cart));
+				mic1.setText(Est.deci.format(micr)+"0 Euro");
+				mac1.setText(Est.deci.format(macr)+"0 Euro");
+				com1.setText(Est.deci.format(comp)+"0 Euro");
+			}
+		});
+		centro.add(cal);
+		centro.add(bex);
 		
-//		Bottone bent=new Bottone("See Product");
-//		bent.but.addActionListener(new ActionListener() {
-//		    public void actionPerformed(ActionEvent e) {
-//		    	if (index!=-1){
-//		    		SchedaMerce aggg=new SchedaMerce(index);
-//				    	aggg.setVisible(true);
-//				    	dispose();
-//		    	}
-//			}
-//		});
-//		
-//		sud.add(bent);
-		
-///*comp6*/Bottone b2=new Bottone("ADD new");
-//		b2.but.addActionListener(new ActionListener() {
-//		    public void actionPerformed(ActionEvent e) {
-//		    	AggiungiMerce aggg=new AggiungiMerce(-1);
-//		    	aggg.setVisible(true);
-//		    	dispose();
-//			}
-//		});
-//		sud.add(b2);
-//		c.add("South",sud);
-		centro.add(sinistro);
 		pack();
 	}
 }

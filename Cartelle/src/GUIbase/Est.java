@@ -1,11 +1,9 @@
 package GUIbase;
-
 import java.awt.*;
 import java.text.DecimalFormat;
 import java.time.format.DateTimeFormatter;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 
 public class Est {
 	public static Color sfondo=new Color(91,138,223);
@@ -17,8 +15,8 @@ public class Est {
 	public static Font plainFont=new Font("Arial Rounded MT Bold", Font.PLAIN, 20);
 	
 	private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	private static double wi=screenSize.getSize().getWidth()/2.8;
-	private static double he=screenSize.getSize().getSize().getHeight()/1.15;
+	private static double wi=screenSize.getSize().getWidth()/2;
+	private static double he=screenSize.getSize().getSize().getHeight()/1.85;
 	private static double he80=he/11.5;
 	private static double he30=he/31.0;
 	private static double wi270=wi/2.5;
@@ -35,7 +33,8 @@ public class Est {
 	public static int marginX=(int)((screenSize.getSize().getWidth()/2)-(standard.getSize().getWidth()/2));
 	public static int marginY=(int)((screenSize.getSize().getSize().getHeight()/2)-(standard.getSize().getHeight()/2));
 	
-	public static DecimalFormat deci = new DecimalFormat("0.00");
+	public static DecimalFormat deci = new DecimalFormat("0.0");
+	public static DecimalFormat de = new DecimalFormat("0");
 	public static DateTimeFormatter dateForm= DateTimeFormatter.ofPattern("yyyy-MM-dd H:mm.ss");
 	
 	public static Border bordo= BorderFactory.createEmptyBorder(10,10,10,10);
