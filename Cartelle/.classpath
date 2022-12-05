@@ -18,5 +18,6 @@
 	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/SparseBitSet-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/xmlbeans-5.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/log4j-api-2.17.2.0001L.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/log4j-core-2.17.2.0001L.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
