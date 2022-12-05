@@ -8,7 +8,7 @@ import contaCartelle.Conta;
 
 public class Home  extends Finestra{
 	private final String deff="--------";
-	private Double bat=0.0;
+	public static Double bat=0.0;
 	private Double cart;
 	private Double micr;
 	private Double macr;
@@ -16,6 +16,12 @@ public class Home  extends Finestra{
 	static Double pre1=2.0;
 	static Double pre2=3.0;
 	static Double pre3=4.0;
+	FormVuoto form =new FormVuoto("battute o file");
+	Etichetta bbb1=new Etichetta(deff);
+	Etichetta car1=new Etichetta(deff);
+	Etichetta mic1=new Etichetta(deff);
+	Etichetta mac1=new Etichetta(deff);
+	Etichetta com1=new Etichetta(deff);
 	
 	public Home(){
 		super("Home: ");
@@ -27,33 +33,32 @@ public class Home  extends Finestra{
 		c.add("North", titolo);
 		
 		JPanel centro=new JPanel();
-		centro.setLayout(new GridLayout(6,2));
+		centro.setLayout(new GridLayout(7,2));
 		centro.setOpaque(false);
 		c.add("Center",centro);
 		
 /*1*/	Etichetta non=new Etichetta("<html>Inserire numero battute: (spazi incl)<br>O droppa qui il file     ------------></html>");
 		centro.add(non);
-		FormVuoto form =new FormVuoto("battute o file");
 		centro.add(form);
-	
-/*2*/		Etichetta car=new Etichetta("Numero cartelle totali:");
+
+/*2*/		Etichetta bbb=new Etichetta("Numero battute totali:");
+		centro.add(bbb);
+		centro.add(bbb1);
+		
+/*2bis*/		Etichetta car=new Etichetta("Numero cartelle totali:");
 		centro.add(car);
-		Etichetta car1=new Etichetta(deff);
 		centro.add(car1);
 		
 /*3*/	Etichetta mic=new Etichetta("Costo MicroEditing:");
 		centro.add(mic);
-		Etichetta mic1=new Etichetta(deff);
 		centro.add(mic1);
 		
 /*4*/	Etichetta mac=new Etichetta("Costo MacroEditing:");
 		centro.add(mac);
-		Etichetta mac1=new Etichetta(deff);
 		centro.add(mac1);
 		
 /*5*/	Etichetta com=new Etichetta("Costo Completo:");
 		centro.add(com);
-		Etichetta com1=new Etichetta(deff);
 		centro.add(com1);
 		
 		
@@ -75,52 +80,55 @@ public class Home  extends Finestra{
 					micr=cart*pre1;
 					macr=cart*pre2;
 					comp=cart*pre3;
+					bbb1.setText(Est.de.format(bat));
 					car1.setText(Est.de.format(cart));
 					mic1.setText(Est.deci.format(micr)+"0 Euro");
 					mac1.setText(Est.deci.format(macr)+"0 Euro");
 					com1.setText(Est.deci.format(comp)+"0 Euro");
+//					bat=0.0;
+//					form.clear();
 		    	}
 		    	catch (NumberFormatException ex) {
-		    		form.clear();
-		    		bat=0.0;
-		    		cart=0.0;
-		    		micr=0.0;
-		    		macr=0.0;
-		    		comp=0.0;
-		    		car1.setText(deff);
-					mic1.setText(deff);
-					mac1.setText(deff);
-					com1.setText(deff);
+		    		
+		    	
+			    	try {
+			    		Conta pro=new Conta(form.ciao);
+						bat=pro.con();
+						cart=bat/1800;
+						micr=cart*pre1;
+						macr=cart*pre2;
+						comp=cart*pre3;
+						bbb1.setText(Est.de.format(bat));
+						car1.setText(Est.de.format(cart));
+						mic1.setText(Est.deci.format(micr)+"0 Euro");
+						mac1.setText(Est.deci.format(macr)+"0 Euro");
+						com1.setText(Est.deci.format(comp)+"0 Euro");
+						bat=0.0;
+						form.clear();
+			    	}
+			    	catch (Exception ee) {}
 		    	}
-		    	try {
-		    		Conta pro=new Conta(form.ciao);
-					bat=pro.con();
-					cart=bat/1800;
-					micr=cart*pre1;
-					macr=cart*pre2;
-					comp=cart*pre3;
-					car1.setText(Est.de.format(cart));
-					mic1.setText(Est.deci.format(micr)+"0 Euro");
-					mac1.setText(Est.deci.format(macr)+"0 Euro");
-					com1.setText(Est.deci.format(comp)+"0 Euro");
-		    	}
-		    	catch (Exception ex) {
-		    		form.clear();
-		    		bat=0.0;
-		    		cart=0.0;
-		    		micr=0.0;
-		    		macr=0.0;
-		    		comp=0.0;
-		    		car1.setText(deff);
-					mic1.setText(deff);
-					mac1.setText(deff);
-					com1.setText(deff);
-		    	}
+//		    	catch (Exception ex) {
+//		    		clear();
+//		    	}
 			}
 		});
 		centro.add(cal);
 		centro.add(bex);
 		
 		pack();
+	}
+	public void clear() {
+		form.clear();
+		bat=0.0;
+		cart=0.0;
+		micr=0.0;
+		macr=0.0;
+		comp=0.0;
+		bbb1.setText(deff);
+		car1.setText(deff);
+		mic1.setText(deff);
+		mac1.setText(deff);
+		com1.setText(deff);
 	}
 }

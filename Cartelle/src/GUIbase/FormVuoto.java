@@ -30,6 +30,7 @@ public class FormVuoto extends JTextField{
 				if (getText().isEmpty()){
 					setText(tit);
 					setForeground(Est.chiarissimo);
+					ciao="";
 				}
 				else ret=getText();
 			}
@@ -43,20 +44,22 @@ public class FormVuoto extends JTextField{
 		            evt.acceptDrop(DnDConstants.ACTION_COPY);
 		            List<File> droppedFiles = (List<File>)evt.getTransferable().getTransferData(DataFlavor.javaFileListFlavor);
 		            for (File file : droppedFiles) {
-		                // process files
 		            	ciao=file.getAbsolutePath();
+		            	setText(ciao);
 		            }
+		            ret=ciao;
 		        } catch (Exception ex) {
 		            ex.printStackTrace();
 		        }
 		    }
 		});
-		
 	}
 	
 	public void clear(){
 		setText(tt);
 		setForeground(Est.chiarissimo);
+		ciao="";
+		ret="";
 	}
 	
 	public void setUnchain() {

@@ -6,5 +6,17 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/commons-codec-1.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/commons-compress-1.21.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/commons-io-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/curvesapi-1.07.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/poi-5.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/poi-ooxml-5.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/poi-ooxml-lite-5.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/SparseBitSet-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/xmlbeans-5.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cla/Desktop/apachJARtext/log4j-api-2.17.2.0001L.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
