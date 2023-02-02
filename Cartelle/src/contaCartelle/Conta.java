@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+
 
 public class Conta {
 	public int caratteri=0;
