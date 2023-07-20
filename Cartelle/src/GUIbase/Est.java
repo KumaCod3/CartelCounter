@@ -5,7 +5,7 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 
 public class Est {
-	public static Color sfondo=new Color(231,243,246 /*91,138,223*/);
+	public static Color sfondo=new Color(/*231,243,246 */91,138,223);
 	public static Color scuro=new Color(29,55,72 /*44,100,198*/);
 	public static Color chiarissimo=new Color(117,223,235);
 	
